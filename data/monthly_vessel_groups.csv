@@ -1,0 +1,298 @@
+month,gear,group,groupLabel,observedVessels,activeVesselDays,hours,comparableObservedVessels,comparableActiveVesselDays,comparableHours,daysCovered,comparableDaysCovered,partial,unresolvedFlagVesselsInTotal,sourceId,scopeId,unit
+2024-01,all,all,Total observed,79,766,8647.96,79,766,8647.96,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-01,all,kir,KIR-flagged in source,7,77,1002.64,7,77,1002.64,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-01,all,jv,JV-associated historical roster,39,591,7637.74,39,591,7637.74,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-01,ps,all,Total observed,53,261,1501.78,53,261,1501.78,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-01,ps,kir,KIR-flagged in source,4,11,53.97,4,11,53.97,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-01,ps,jv,JV-associated historical roster,17,99,585.31,17,99,585.31,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-01,ll,all,Total observed,20,485,7027.96,20,485,7027.96,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-01,ll,kir,KIR-flagged in source,3,66,948.67,3,66,948.67,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-01,ll,jv,JV-associated historical roster,20,485,7027.96,20,485,7027.96,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-02,all,all,Total observed,75,648,7851.0,75,648,7851.0,29,29,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-02,all,kir,KIR-flagged in source,6,100,1557.34,6,100,1557.34,29,29,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-02,all,jv,JV-associated historical roster,44,574,7387.05,44,574,7387.05,29,29,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-02,ps,all,Total observed,43,137,761.24,43,137,761.24,29,29,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-02,ps,kir,KIR-flagged in source,3,13,108.31,3,13,108.31,29,29,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-02,ps,jv,JV-associated historical roster,16,70,329.83,16,70,329.83,29,29,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-02,ll,all,Total observed,27,487,6958.58,27,487,6958.58,29,29,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-02,ll,kir,KIR-flagged in source,3,87,1449.03,3,87,1449.03,29,29,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-02,ll,jv,JV-associated historical roster,26,486,6956.21,26,486,6956.21,29,29,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-03,all,all,Total observed,84,818,10347.16,84,818,10347.16,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-03,all,kir,KIR-flagged in source,7,43,555.12,7,43,555.12,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-03,all,jv,JV-associated historical roster,61,758,9891.45,61,758,9891.45,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-03,ps,all,Total observed,33,121,822.38,33,121,822.38,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-03,ps,kir,KIR-flagged in source,4,7,19.17,4,7,19.17,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-03,ps,jv,JV-associated historical roster,15,70,405.49,15,70,405.49,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-03,ll,all,Total observed,47,683,9427.7,47,683,9427.7,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-03,ll,kir,KIR-flagged in source,3,36,535.95,3,36,535.95,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-03,ll,jv,JV-associated historical roster,44,678,9400.47,44,678,9400.47,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-04,all,all,Total observed,69,1217,19027.77,69,1217,19027.77,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-04,all,kir,KIR-flagged in source,6,95,1653.07,6,95,1653.07,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-04,all,jv,JV-associated historical roster,59,1170,18638.99,59,1170,18638.99,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-04,ps,all,Total observed,25,105,771.6,25,105,771.6,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-04,ps,kir,KIR-flagged in source,3,6,50.37,3,6,50.37,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-04,ps,jv,JV-associated historical roster,16,59,382.94,16,59,382.94,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-04,ll,all,Total observed,44,1112,18256.17,44,1112,18256.17,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-04,ll,kir,KIR-flagged in source,3,89,1602.7,3,89,1602.7,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-04,ll,jv,JV-associated historical roster,43,1111,18256.05,43,1111,18256.05,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-05,all,all,Total observed,83,1318,19586.21,83,1318,19586.21,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-05,all,kir,KIR-flagged in source,4,31,406.54,4,31,406.54,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-05,all,jv,JV-associated historical roster,62,1207,18503.37,62,1207,18503.37,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-05,ps,all,Total observed,24,237,2527.63,24,237,2527.63,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-05,ps,kir,KIR-flagged in source,2,15,182.58,2,15,182.58,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-05,ps,jv,JV-associated historical roster,13,143,1495.21,13,143,1495.21,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-05,ll,all,Total observed,57,1075,17046.7,57,1075,17046.7,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-05,ll,kir,KIR-flagged in source,2,16,223.96,2,16,223.96,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-05,ll,jv,JV-associated historical roster,49,1064,17008.16,49,1064,17008.16,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-06,all,all,Total observed,76,895,12839.21,76,895,12839.21,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-06,all,kir,KIR-flagged in source,2,8,84.56,2,8,84.56,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-06,all,jv,JV-associated historical roster,60,787,11672.48,60,787,11672.48,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-06,ps,all,Total observed,22,247,2854.03,22,247,2854.03,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-06,ps,kir,KIR-flagged in source,2,8,84.56,2,8,84.56,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-06,ps,jv,JV-associated historical roster,13,152,1742.33,13,152,1742.33,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-06,ll,all,Total observed,52,626,9631.24,52,626,9631.24,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-06,ll,kir,KIR-flagged in source,0,0,0.0,0,0,0.0,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-06,ll,jv,JV-associated historical roster,45,613,9576.21,45,613,9576.21,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-07,all,all,Total observed,69,1090,16047.86,69,1090,16047.86,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-07,all,kir,KIR-flagged in source,2,45,544.49,2,45,544.49,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-07,all,jv,JV-associated historical roster,44,932,14205.97,44,932,14205.97,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-07,ps,all,Total observed,29,438,5551.89,29,438,5551.89,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-07,ps,kir,KIR-flagged in source,2,45,544.49,2,45,544.49,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-07,ps,jv,JV-associated historical roster,16,298,3750.3,16,298,3750.3,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-07,ll,all,Total observed,37,613,9841.18,37,613,9841.18,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-07,ll,kir,KIR-flagged in source,0,0,0.0,0,0,0.0,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-07,ll,jv,JV-associated historical roster,26,598,9810.63,26,598,9810.63,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-08,all,all,Total observed,57,788,12080.38,57,788,12080.38,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-08,all,kir,KIR-flagged in source,2,23,243.6,2,23,243.6,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-08,all,jv,JV-associated historical roster,39,688,11018.09,39,688,11018.09,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-08,ps,all,Total observed,29,281,3893.17,29,281,3893.17,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-08,ps,kir,KIR-flagged in source,2,23,243.6,2,23,243.6,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-08,ps,jv,JV-associated historical roster,16,194,2899.61,16,194,2899.61,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-08,ll,all,Total observed,26,498,8047.16,26,498,8047.16,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-08,ll,kir,KIR-flagged in source,0,0,0.0,0,0,0.0,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-08,ll,jv,JV-associated historical roster,21,485,7978.43,21,485,7978.43,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-09,all,all,Total observed,64,700,10120.82,64,700,10120.82,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-09,all,kir,KIR-flagged in source,5,11,71.18,5,11,71.18,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-09,all,jv,JV-associated historical roster,47,637,9620.87,47,637,9620.87,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-09,ps,all,Total observed,32,205,2141.09,32,205,2141.09,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-09,ps,kir,KIR-flagged in source,3,9,56.32,3,9,56.32,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-09,ps,jv,JV-associated historical roster,19,146,1647.49,19,146,1647.49,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-09,ll,all,Total observed,30,486,7860.92,30,486,7860.92,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-09,ll,kir,KIR-flagged in source,2,2,14.86,2,2,14.86,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-09,ll,jv,JV-associated historical roster,26,482,7854.57,26,482,7854.57,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-10,all,all,Total observed,67,909,13603.87,67,909,13603.87,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-10,all,kir,KIR-flagged in source,4,81,1129.27,4,81,1129.27,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-10,all,jv,JV-associated historical roster,54,878,13501.49,54,878,13501.49,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-10,ps,all,Total observed,21,141,1450.73,21,141,1450.73,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-10,ps,kir,KIR-flagged in source,1,5,26.67,1,5,26.67,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-10,ps,jv,JV-associated historical roster,15,118,1365.66,15,118,1365.66,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-10,ll,all,Total observed,45,764,12097.05,45,764,12097.05,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-10,ll,kir,KIR-flagged in source,3,76,1102.6,3,76,1102.6,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-10,ll,jv,JV-associated historical roster,38,756,12079.74,38,756,12079.74,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-11,all,all,Total observed,78,1187,16256.28,78,1187,16256.28,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-11,all,kir,KIR-flagged in source,6,114,1723.34,6,114,1723.34,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-11,all,jv,JV-associated historical roster,57,1095,15692.16,57,1095,15692.16,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-11,ps,all,Total observed,32,235,2131.8,32,235,2131.8,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-11,ps,kir,KIR-flagged in source,3,28,150.7,3,28,150.7,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-11,ps,jv,JV-associated historical roster,15,148,1574.84,15,148,1574.84,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-11,ll,all,Total observed,45,928,13840.38,45,928,13840.38,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-11,ll,kir,KIR-flagged in source,3,86,1572.64,3,86,1572.64,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-11,ll,jv,JV-associated historical roster,41,923,13833.22,41,923,13833.22,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-12,all,all,Total observed,69,1133,13688.71,69,1133,13688.71,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-12,all,kir,KIR-flagged in source,5,99,1435.54,5,99,1435.54,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-12,all,jv,JV-associated historical roster,52,1023,13030.09,52,1023,13030.09,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-12,ps,all,Total observed,26,192,1266.19,26,192,1266.19,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-12,ps,kir,KIR-flagged in source,2,17,135.48,2,17,135.48,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-12,ps,jv,JV-associated historical roster,11,84,611.24,11,84,611.24,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-12,ll,all,Total observed,41,917,12155.5,41,917,12155.5,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-12,ll,kir,KIR-flagged in source,3,82,1300.06,3,82,1300.06,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2024-12,ll,jv,JV-associated historical roster,40,916,12153.94,40,916,12153.94,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-01,all,all,Total observed,92,1394,15892.74,92,1394,15892.74,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-01,all,kir,KIR-flagged in source,6,145,1995.85,6,145,1995.85,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-01,all,jv,JV-associated historical roster,58,1083,12842.26,58,1083,12842.26,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-01,ps,all,Total observed,30,168,1105.92,30,168,1105.92,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-01,ps,kir,KIR-flagged in source,1,8,61.26,1,8,61.26,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-01,ps,jv,JV-associated historical roster,13,66,459.13,13,66,459.13,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-01,ll,all,Total observed,60,1202,14565.72,60,1202,14565.72,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-01,ll,kir,KIR-flagged in source,5,137,1934.59,5,137,1934.59,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-01,ll,jv,JV-associated historical roster,43,993,12162.03,43,993,12162.03,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-02,all,all,Total observed,97,1288,14717.46,97,1288,14717.46,28,28,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-02,all,kir,KIR-flagged in source,7,116,1501.79,7,116,1501.79,28,28,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-02,all,jv,JV-associated historical roster,60,986,11682.74,60,986,11682.74,28,28,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-02,ps,all,Total observed,28,104,616.73,28,104,616.73,28,28,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-02,ps,kir,KIR-flagged in source,2,7,33.82,2,7,33.82,28,28,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-02,ps,jv,JV-associated historical roster,11,42,250.98,11,42,250.98,28,28,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-02,ll,all,Total observed,67,1164,13903.45,67,1164,13903.45,28,28,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-02,ll,kir,KIR-flagged in source,5,109,1467.97,5,109,1467.97,28,28,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-02,ll,jv,JV-associated historical roster,48,926,11256.95,48,926,11256.95,28,28,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-03,all,all,Total observed,124,2063,23343.07,124,2063,23343.07,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-03,all,kir,KIR-flagged in source,10,179,2516.53,10,179,2516.53,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-03,all,jv,JV-associated historical roster,79,1548,17997.49,79,1548,17997.49,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-03,ps,all,Total observed,33,177,1206.62,33,177,1206.62,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-03,ps,kir,KIR-flagged in source,4,36,289.52,4,36,289.52,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-03,ps,jv,JV-associated historical roster,17,106,779.55,17,106,779.55,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-03,ll,all,Total observed,82,1854,21924.73,82,1854,21924.73,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-03,ll,kir,KIR-flagged in source,5,142,2226.34,5,142,2226.34,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-03,ll,jv,JV-associated historical roster,58,1418,17052.38,58,1418,17052.38,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-04,all,all,Total observed,129,1953,25754.99,129,1953,25754.99,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-04,all,kir,KIR-flagged in source,13,192,2539.33,13,192,2539.33,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-04,all,jv,JV-associated historical roster,79,1376,18478.38,79,1376,18478.38,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-04,ps,all,Total observed,37,217,1746.52,37,217,1746.52,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-04,ps,kir,KIR-flagged in source,7,52,388.03,7,52,388.03,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-04,ps,jv,JV-associated historical roster,17,132,1083.59,17,132,1083.59,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-04,ll,all,Total observed,87,1711,23775.92,87,1711,23775.92,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-04,ll,kir,KIR-flagged in source,5,139,2151.19,5,139,2151.19,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-04,ll,jv,JV-associated historical roster,59,1221,17169.56,59,1221,17169.56,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-05,all,all,Total observed,108,1367,19851.34,108,1367,19851.34,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-05,all,kir,KIR-flagged in source,16,120,1672.37,16,120,1672.37,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-05,all,jv,JV-associated historical roster,71,940,13536.15,71,940,13536.15,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-05,ps,all,Total observed,30,170,1396.73,30,170,1396.73,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-05,ps,kir,KIR-flagged in source,8,25,153.36,8,25,153.36,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-05,ps,jv,JV-associated historical roster,19,125,1012.05,19,125,1012.05,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-05,ll,all,Total observed,71,1179,18329.41,71,1179,18329.41,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-05,ll,kir,KIR-flagged in source,5,87,1489.34,5,87,1489.34,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-05,ll,jv,JV-associated historical roster,47,799,12404.65,47,799,12404.65,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-06,all,all,Total observed,103,1446,22096.67,103,1446,22096.67,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-06,all,kir,KIR-flagged in source,14,118,1626.74,14,118,1626.74,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-06,all,jv,JV-associated historical roster,60,882,13390.84,60,882,13390.84,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-06,ps,all,Total observed,39,248,2379.21,39,248,2379.21,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-06,ps,kir,KIR-flagged in source,9,32,191.78,9,32,191.78,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-06,ps,jv,JV-associated historical roster,22,170,1611.3,22,170,1611.3,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-06,ll,all,Total observed,60,1163,19245.05,60,1163,19245.05,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-06,ll,kir,KIR-flagged in source,3,82,1430.9,3,82,1430.9,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-06,ll,jv,JV-associated historical roster,35,678,11307.31,35,678,11307.31,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-07,all,all,Total observed,88,1446,21318.65,88,1446,21318.65,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-07,all,kir,KIR-flagged in source,11,132,1842.21,11,132,1842.21,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-07,all,jv,JV-associated historical roster,56,911,13383.97,56,911,13383.97,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-07,ps,all,Total observed,24,182,1784.59,24,182,1784.59,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-07,ps,kir,KIR-flagged in source,6,34,287.19,6,34,287.19,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-07,ps,jv,JV-associated historical roster,20,168,1618.21,20,168,1618.21,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-07,ll,all,Total observed,61,1235,19152.01,61,1235,19152.01,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-07,ll,kir,KIR-flagged in source,3,88,1421.94,3,88,1421.94,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-07,ll,jv,JV-associated historical roster,33,714,11383.71,33,714,11383.71,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-08,all,all,Total observed,90,1506,23035.14,90,1506,23035.14,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-08,all,kir,KIR-flagged in source,13,128,1612.43,13,128,1612.43,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-08,all,jv,JV-associated historical roster,51,971,15074.55,51,971,15074.55,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-08,ps,all,Total observed,33,314,3484.71,33,314,3484.71,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-08,ps,kir,KIR-flagged in source,8,42,353.45,8,42,353.45,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-08,ps,jv,JV-associated historical roster,20,231,2637.4,20,231,2637.4,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-08,ll,all,Total observed,53,1161,19219.75,53,1161,19219.75,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-08,ll,kir,KIR-flagged in source,3,73,1127.26,3,73,1127.26,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-08,ll,jv,JV-associated historical roster,28,710,12106.64,28,710,12106.64,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-09,all,all,Total observed,97,1330,20209.85,97,1330,20209.85,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-09,all,kir,KIR-flagged in source,10,107,1628.48,10,107,1628.48,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-09,all,jv,JV-associated historical roster,53,864,13504.61,53,864,13504.61,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-09,ps,all,Total observed,29,181,1624.36,29,181,1624.36,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-09,ps,kir,KIR-flagged in source,5,36,480.75,5,36,480.75,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-09,ps,jv,JV-associated historical roster,16,116,1109.19,16,116,1109.19,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-09,ll,all,Total observed,61,1110,18113.19,61,1110,18113.19,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-09,ll,kir,KIR-flagged in source,3,67,1115.32,3,67,1115.32,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-09,ll,jv,JV-associated historical roster,33,717,12043.18,33,717,12043.18,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-10,all,all,Total observed,109,1588,23885.83,109,1588,23885.83,31,31,False,1,vessel_group_flags,screened_observed,unique observed active vessels
+2025-10,all,kir,KIR-flagged in source,11,125,2211.84,11,125,2211.84,31,31,False,1,vessel_group_flags,screened_observed,unique observed active vessels
+2025-10,all,jv,JV-associated historical roster,56,975,15182.48,56,975,15182.48,31,31,False,1,vessel_group_flags,screened_observed,unique observed active vessels
+2025-10,ps,all,Total observed,35,174,1329.31,35,174,1329.31,31,31,False,1,vessel_group_flags,screened_observed,unique observed active vessels
+2025-10,ps,kir,KIR-flagged in source,6,23,198.48,6,23,198.48,31,31,False,1,vessel_group_flags,screened_observed,unique observed active vessels
+2025-10,ps,jv,JV-associated historical roster,17,107,858.38,17,107,858.38,31,31,False,1,vessel_group_flags,screened_observed,unique observed active vessels
+2025-10,ll,all,Total observed,66,1388,22332.54,66,1388,22332.54,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-10,ll,kir,KIR-flagged in source,3,93,1986.97,3,93,1986.97,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-10,ll,jv,JV-associated historical roster,36,857,14253.23,36,857,14253.23,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-11,all,all,Total observed,104,1607,20634.68,104,1607,20634.68,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-11,all,kir,KIR-flagged in source,13,105,1564.53,13,105,1564.53,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-11,all,jv,JV-associated historical roster,58,980,12966.23,58,980,12966.23,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-11,ps,all,Total observed,38,248,1854.27,38,248,1854.27,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-11,ps,kir,KIR-flagged in source,6,23,147.24,6,23,147.24,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-11,ps,jv,JV-associated historical roster,18,118,883.47,18,118,883.47,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-11,ll,all,Total observed,60,1342,18648.87,60,1342,18648.87,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-11,ll,kir,KIR-flagged in source,5,73,1339.37,5,73,1339.37,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-11,ll,jv,JV-associated historical roster,37,851,11996.7,37,851,11996.7,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-12,all,all,Total observed,103,1665,19220.13,103,1665,19220.13,31,31,False,2,vessel_group_flags,screened_observed,unique observed active vessels
+2025-12,all,kir,KIR-flagged in source,12,151,2092.87,12,151,2092.87,31,31,False,2,vessel_group_flags,screened_observed,unique observed active vessels
+2025-12,all,jv,JV-associated historical roster,54,1073,12738.8,54,1073,12738.8,31,31,False,2,vessel_group_flags,screened_observed,unique observed active vessels
+2025-12,ps,all,Total observed,38,265,1714.37,38,265,1714.37,31,31,False,2,vessel_group_flags,screened_observed,unique observed active vessels
+2025-12,ps,kir,KIR-flagged in source,6,31,182.86,6,31,182.86,31,31,False,2,vessel_group_flags,screened_observed,unique observed active vessels
+2025-12,ps,jv,JV-associated historical roster,17,140,839.51,17,140,839.51,31,31,False,2,vessel_group_flags,screened_observed,unique observed active vessels
+2025-12,ll,all,Total observed,59,1340,17023.02,59,1340,17023.02,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-12,ll,kir,KIR-flagged in source,5,114,1901.19,5,114,1901.19,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2025-12,ll,jv,JV-associated historical roster,35,898,11627.7,35,898,11627.7,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-01,all,all,Total observed,109,1830,21402.95,109,1830,21402.95,31,31,False,1,vessel_group_flags,screened_observed,unique observed active vessels
+2026-01,all,kir,KIR-flagged in source,12,157,2209.53,12,157,2209.53,31,31,False,1,vessel_group_flags,screened_observed,unique observed active vessels
+2026-01,all,jv,JV-associated historical roster,62,1152,13505.69,62,1152,13505.69,31,31,False,1,vessel_group_flags,screened_observed,unique observed active vessels
+2026-01,ps,all,Total observed,34,285,1923.67,34,285,1923.67,31,31,False,1,vessel_group_flags,screened_observed,unique observed active vessels
+2026-01,ps,kir,KIR-flagged in source,6,24,172.89,6,24,172.89,31,31,False,1,vessel_group_flags,screened_observed,unique observed active vessels
+2026-01,ps,jv,JV-associated historical roster,19,185,1281.62,19,185,1281.62,31,31,False,1,vessel_group_flags,screened_observed,unique observed active vessels
+2026-01,ll,all,Total observed,66,1494,19049.68,66,1494,19049.68,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-01,ll,kir,KIR-flagged in source,5,127,1989.49,5,127,1989.49,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-01,ll,jv,JV-associated historical roster,40,933,11857.37,40,933,11857.37,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-02,all,all,Total observed,102,1405,16237.2,102,1405,16237.2,28,28,False,1,vessel_group_flags,screened_observed,unique observed active vessels
+2026-02,all,kir,KIR-flagged in source,10,76,817.84,10,76,817.84,28,28,False,1,vessel_group_flags,screened_observed,unique observed active vessels
+2026-02,all,jv,JV-associated historical roster,60,828,9032.74,60,828,9032.74,28,28,False,1,vessel_group_flags,screened_observed,unique observed active vessels
+2026-02,ps,all,Total observed,31,171,1158.51,31,171,1158.51,28,28,False,1,vessel_group_flags,screened_observed,unique observed active vessels
+2026-02,ps,kir,KIR-flagged in source,4,22,150.72,4,22,150.72,28,28,False,1,vessel_group_flags,screened_observed,unique observed active vessels
+2026-02,ps,jv,JV-associated historical roster,16,122,876.44,16,122,876.44,28,28,False,1,vessel_group_flags,screened_observed,unique observed active vessels
+2026-02,ll,all,Total observed,61,1200,14808.45,61,1200,14808.45,28,28,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-02,ll,kir,KIR-flagged in source,3,50,650.56,3,50,650.56,28,28,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-02,ll,jv,JV-associated historical roster,37,676,7891.93,37,676,7891.93,28,28,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-03,all,all,Total observed,102,1376,16715.35,102,1376,16715.35,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-03,all,kir,KIR-flagged in source,13,147,2254.52,13,147,2254.52,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-03,all,jv,JV-associated historical roster,57,847,10308.21,57,847,10308.21,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-03,ps,all,Total observed,27,186,1480.47,27,186,1480.47,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-03,ps,kir,KIR-flagged in source,6,25,225.54,6,25,225.54,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-03,ps,jv,JV-associated historical roster,17,129,1105.95,17,129,1105.95,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-03,ll,all,Total observed,66,1141,14683.16,66,1141,14683.16,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-03,ll,kir,KIR-flagged in source,5,120,2021.3,5,120,2021.3,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-03,ll,jv,JV-associated historical roster,37,701,9048.59,37,701,9048.59,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-04,all,all,Total observed,97,1366,16757.41,97,1366,16757.41,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-04,all,kir,KIR-flagged in source,14,181,2487.13,14,181,2487.13,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-04,all,jv,JV-associated historical roster,48,799,9945.96,48,799,9945.96,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-04,ps,all,Total observed,42,344,2979.7,42,344,2979.7,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-04,ps,kir,KIR-flagged in source,6,35,242.42,6,35,242.42,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-04,ps,jv,JV-associated historical roster,18,199,1663.11,18,199,1663.11,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-04,ll,all,Total observed,45,982,13444.06,45,982,13444.06,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-04,ll,kir,KIR-flagged in source,5,137,2201.56,5,137,2201.56,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-04,ll,jv,JV-associated historical roster,26,587,8228.63,26,587,8228.63,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-05,all,all,Total observed,105,1269,17138.7,105,1269,17138.7,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-05,all,kir,KIR-flagged in source,13,194,2991.25,13,194,2991.25,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-05,all,jv,JV-associated historical roster,54,803,10951.68,54,803,10951.68,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-05,ps,all,Total observed,44,319,3004.64,44,319,3004.64,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-05,ps,kir,KIR-flagged in source,5,27,143.94,5,27,143.94,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-05,ps,jv,JV-associated historical roster,20,211,1983.44,20,211,1983.44,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-05,ll,all,Total observed,48,878,13359.04,48,878,13359.04,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-05,ll,kir,KIR-flagged in source,5,149,2710.03,5,149,2710.03,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-05,ll,jv,JV-associated historical roster,30,571,8814.25,30,571,8814.25,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-06,all,all,Total observed,122,1648,23720.79,122,1648,23720.79,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-06,all,kir,KIR-flagged in source,14,136,2058.49,14,136,2058.49,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-06,all,jv,JV-associated historical roster,60,978,14417.83,60,978,14417.83,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-06,ps,all,Total observed,49,417,4455.24,49,417,4455.24,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-06,ps,kir,KIR-flagged in source,6,44,409.59,6,44,409.59,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-06,ps,jv,JV-associated historical roster,21,241,2631.79,21,241,2631.79,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-06,ll,all,Total observed,60,1159,18271.08,60,1159,18271.08,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-06,ll,kir,KIR-flagged in source,5,73,1345.58,5,73,1345.58,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-06,ll,jv,JV-associated historical roster,34,711,11417.03,34,711,11417.03,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-07,all,all,Total observed,148,1981,27720.55,148,1981,27720.55,31,31,False,2,vessel_group_flags,screened_observed,unique observed active vessels
+2026-07,all,kir,KIR-flagged in source,12,144,1946.2,12,144,1946.2,31,31,False,2,vessel_group_flags,screened_observed,unique observed active vessels
+2026-07,all,jv,JV-associated historical roster,62,1145,16674.22,62,1145,16674.22,31,31,False,2,vessel_group_flags,screened_observed,unique observed active vessels
+2026-07,ps,all,Total observed,62,617,6547.2,62,617,6547.2,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-07,ps,kir,KIR-flagged in source,6,40,322.78,6,40,322.78,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-07,ps,jv,JV-associated historical roster,22,320,3561.27,22,320,3561.27,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-07,ll,all,Total observed,65,1224,19674.51,65,1224,19674.51,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-07,ll,kir,KIR-flagged in source,2,62,1191.06,2,62,1191.06,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-07,ll,jv,JV-associated historical roster,33,757,12396.0,33,757,12396.0,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-08,all,all,Total observed,143,2020,29890.18,143,2020,29890.18,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-08,all,kir,KIR-flagged in source,12,130,1519.92,12,130,1519.92,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-08,all,jv,JV-associated historical roster,66,1185,17409.05,66,1185,17409.05,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-08,ps,all,Total observed,44,384,3564.83,44,384,3564.83,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-08,ps,kir,KIR-flagged in source,6,51,393.65,6,51,393.65,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-08,ps,jv,JV-associated historical roster,20,254,2442.63,20,254,2442.63,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-08,ll,all,Total observed,83,1527,24870.99,83,1527,24870.99,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-08,ll,kir,KIR-flagged in source,2,52,918.7,2,52,918.7,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-08,ll,jv,JV-associated historical roster,38,880,14433.11,38,880,14433.11,31,31,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-09,all,all,Total observed,116,1753,25250.04,116,1753,25250.04,30,30,False,1,vessel_group_flags,screened_observed,unique observed active vessels
+2026-09,all,kir,KIR-flagged in source,10,121,1387.34,10,121,1387.34,30,30,False,1,vessel_group_flags,screened_observed,unique observed active vessels
+2026-09,all,jv,JV-associated historical roster,62,1111,16244.3,62,1111,16244.3,30,30,False,1,vessel_group_flags,screened_observed,unique observed active vessels
+2026-09,ps,all,Total observed,36,321,3089.37,36,321,3089.37,30,30,False,1,vessel_group_flags,screened_observed,unique observed active vessels
+2026-09,ps,kir,KIR-flagged in source,5,39,287.35,5,39,287.35,30,30,False,1,vessel_group_flags,screened_observed,unique observed active vessels
+2026-09,ps,jv,JV-associated historical roster,18,205,1999.57,18,205,1999.57,30,30,False,1,vessel_group_flags,screened_observed,unique observed active vessels
+2026-09,ll,all,Total observed,65,1304,20621.76,65,1304,20621.76,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-09,ll,kir,KIR-flagged in source,2,37,709.91,2,37,709.91,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
+2026-09,ll,jv,JV-associated historical roster,36,839,13588.96,36,839,13588.96,30,30,False,0,vessel_group_flags,screened_observed,unique observed active vessels
