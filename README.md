@@ -1,6 +1,6 @@
-# Pacific Fisheries Monitor · Kiribati
+# Nowcasting Fishing License Revenues in Kiribati
 
-A free public-interest research dashboard for historical fishing activity, vessel comparisons and the saved revenue model.
+A free public-interest research dashboard connecting Global Fishing Watch vessel activity to a transparent economic model of fishing license revenue changes. Includes an overview, revenue nowcast, fishing-activity explorer, visual methodology and source documentation.
 
 **Website:** https://aperaltaalva.github.io/fisheries/
 
@@ -8,7 +8,7 @@ The site has no password or account requirement. It serves a bundled historical 
 
 This repository contains the reviewed static dashboard and aggregate CSV exports. It does not contain raw tracks, vessel-level register records, API credentials or the research source archives. Model-equivalent revenue amounts are not full-year cash-collection forecasts.
 
-See [Sources and reuse](DATA-LICENCES.md) and the dashboard's **Sources & definitions** page for provenance and source-data conditions. This is an independent research tool and does not imply endorsement by any institution or data provider. No blanket open licence is asserted for all inputs or application code.
+See [Sources and reuse](DATA-LICENCES.md) and the dashboard's **Data & sources** page for provenance and source-data conditions. This is an independent research tool and does not imply endorsement by any institution or data provider. No blanket open licence is asserted for all inputs or application code.
 
 ## Hosting
 

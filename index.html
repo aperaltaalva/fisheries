@@ -3,22 +3,71 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="color-scheme" content="light dark">
-  <meta name="description" content="A historical explorer of Kiribati fishing activity and available revenue records.">
-  <title>Pacific Fisheries Monitor · Kiribati</title>
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#15313f">
+  <meta name="description" content="Nowcasting fishing license revenues in Kiribati using Global Fishing Watch vessel activity and a transparent economic model. Explore revenue estimates, fishing effort and the observed fleet.">
+  <title>Nowcasting Fishing License Revenues in Kiribati</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#main-content">Skip to charts</a>
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <div class="app-shell">
     <header class="app-header">
-      <a class="brand" href="#history" aria-label="Pacific Fisheries Monitor home"><span class="brand-mark" aria-hidden="true">≈</span><span>Pacific Fisheries Monitor<small>KIRIBATI WORKSPACE</small></span></a>
-      <div class="header-context"><span class="local-badge"><span aria-hidden="true"></span>Historical data</span><p id="data-cutoff">Loading historical data…</p></div>
+      <a class="brand" href="#overview" aria-label="Kiribati Fisheries home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none"><path d="M6 21c5-6 9-6 14 0s9 6 14 0M6 29c5-6 9-6 14 0s9 6 14 0" stroke="currentColor" stroke-width="2"/><circle cx="26" cy="10" r="4" fill="currentColor"/></svg></span><span>Kiribati Fisheries<small>REVENUE OBSERVATORY</small></span></a>
+      <nav class="app-nav" aria-label="Main navigation">
+        <button class="nav-item" type="button" data-page="overview" aria-current="page">Overview</button>
+        <button class="nav-item" type="button" data-page="revenue">Revenue nowcast</button>
+        <button class="nav-item" type="button" data-page="history">Fishing activity</button>
+        <button class="nav-item" type="button" data-page="methods">How it works</button>
+        <button class="nav-item" type="button" data-page="sources">Data &amp; sources</button>
+      </nav>
     </header>
-    <nav class="app-nav" aria-label="Workspace"><button class="nav-item" type="button" data-page="history" aria-current="page">History</button><button class="nav-item" type="button" data-page="revenue">Revenue</button><button class="nav-item" type="button" data-page="sources">Sources &amp; definitions</button><span class="nav-caption">Evidence for decisions</span></nav>
-    <main id="main-content">
-      <section id="page-history" class="page" aria-labelledby="history-title">
-        <div class="page-intro"><div><div class="eyebrow">The historical view</div><h1 id="history-title">Fishing in perspective.</h1><p>Follow the seasons, compare years, and see how activity shifts across the region.</p></div><button type="button" class="export-button" id="export-monthly">Export this view <span aria-hidden="true">↓</span></button></div>
+    <main id="main-content" tabindex="-1">
+      <section id="page-overview" class="page overview-page" aria-labelledby="overview-title">
+        <div class="landing-hero">
+          <div class="hero-copy">
+            <div class="eyebrow"><span class="eyebrow-line"></span>Kiribati / Fisheries &amp; public revenue</div>
+            <h1 id="overview-title">Nowcasting Fishing License Revenues in <em>Kiribati</em></h1>
+            <p class="hero-deck">From vessel activity at sea to a clearer view of fishing revenues.</p>
+            <p class="hero-explanation">Global Fishing Watch uses machine learning to identify likely fishing activity from vessel-tracking data. We combine these observations with a transparent economic model to estimate changes in Kiribati’s fishing license revenues.</p>
+            <div class="hero-actions"><a class="primary-button" href="#revenue" data-go="revenue">Explore the nowcast <span aria-hidden="true">↗</span></a><a class="quiet-link" href="#methods" data-go="methods">How it works <span aria-hidden="true">→</span></a></div>
+            <div class="hero-source"><span class="source-dot" aria-hidden="true"></span>Built with Global Fishing Watch data</div>
+          </div>
+          <figure class="hero-photo"><img src="assets/fishing-landing-edited.png" width="1254" height="1254" alt="Two people beside a large tuna being weighed on a beach." fetchpriority="high"><figcaption><span>THE ACTIVITY BEHIND THE NUMBERS</span><span aria-hidden="true">01 — KIRIBATI FISHERIES</span></figcaption></figure>
+        </div>
+        <section class="latest-strip" aria-label="Latest observations">
+          <div class="latest-intro"><span class="eyebrow">At a glance</span><h2>The latest view</h2><p>Each measure has its own observation period.</p></div>
+          <a href="#revenue" data-go="revenue" class="latest-item"><span>Preferred model change <span aria-hidden="true">↗</span></span><strong id="overview-growth">—</strong><small id="overview-model-period">Loading model period</small></a>
+          <a href="#history" data-go="history" class="latest-item"><span>Vessels detected fishing <span aria-hidden="true">↗</span></span><strong id="overview-vessels">—</strong><small id="overview-activity-period">Loading activity period</small></a>
+          <a href="#revenue" data-go="revenue" class="latest-item"><span>Recorded licence receipts <span aria-hidden="true">↗</span></span><strong id="overview-receipts">—</strong><small id="overview-receipt-period">Latest annual fiscal record</small></a>
+        </section>
+        <div class="overview-note"><p>An activity-based research tool for following revenue trends, exploring the fishing fleet and understanding the assumptions behind the estimates.</p><a href="#sources" data-go="sources" class="quiet-link">Explore the data <span aria-hidden="true">→</span></a></div>
+      </section>
+      <section id="page-revenue" class="page" aria-labelledby="revenue-title" hidden>
+        <div class="page-intro"><div><div class="eyebrow">01 / Revenue outlook</div><h1 id="revenue-title">Nowcasting Fishing Revenues</h1><p>An activity-based estimate of how Kiribati’s fishing license revenue is changing.</p></div><div class="period-stamp"><span>MODEL INPUTS THROUGH</span><strong id="revenue-cutoff">August 2026</strong></div></div>
+        <section class="forecast-section" id="forecast-section" hidden aria-labelledby="forecast-title">
+          <div class="forecast-summary">
+            <div class="lead-stat"><span class="stat-label">Preferred model change</span><strong id="forecast-growth"></strong><span id="forecast-growth-label"></span></div>
+            <div class="secondary-stat"><span class="stat-label" id="forecast-level-label">Model index · 2019 = 100</span><strong id="forecast-level"></strong><span id="forecast-level-period">Seasonally linked estimate</span></div>
+            <div class="forecast-context"><span class="eyebrow">Reading the nowcast</span><p>The model translates comparable vessel activity into a revenue indicator, using explicit assumptions about fishing methods, fees and exchange rates.</p><a href="#methods" data-go="methods" class="quiet-link">Follow the method <span aria-hidden="true">→</span></a></div>
+          </div>
+          <div class="chart-heading forecast-heading"><div><h2 id="forecast-title">Revenue indicator and recorded receipts</h2><p id="forecast-subtitle"></p></div><div class="chart-actions"><label class="control-label" for="forecast-scale">Display<select id="forecast-scale"><option value="index">Index · 2019 = 100</option><option value="aud">AUD model equivalent</option></select></label><button type="button" class="export-button" id="export-model">Download data <span aria-hidden="true">↓</span></button></div></div>
+          <div class="year-legend model-legend"><span><i class="model-actual"></i>Recorded licence receipts</span><span><i class="model-central"></i>Preferred model</span><span><i class="model-band"></i>Model sensitivity range</span><span><i class="model-extension"></i>Jan–Aug extension</span></div>
+          <svg id="forecast-chart" class="forecast-chart" role="img" aria-labelledby="forecast-title forecast-interpretation"></svg>
+          <p class="chart-footnote" id="forecast-interpretation"></p>
+          <details class="method-details"><summary>Model assumptions and interpretation</summary><div id="forecast-method"></div></details>
+        </section>
+        <section class="recorded-section" aria-labelledby="actuals-heading">
+          <div class="section-heading"><div><div class="eyebrow">The fiscal record</div><h2 id="actuals-heading" class="section-title">Recorded annual receipts</h2><p>Historical collections provide a separate reference for the model.</p></div><label class="control-label" for="revenue-definition">Revenue definition<select id="revenue-definition"><option value="licence">Fishing licence revenue</option><option value="broad">Licences and related receipts</option></select></label></div>
+          <div class="scope-note" id="revenue-scope"></div>
+          <section class="chart-section revenue-chart-section"><div class="chart-heading"><div><h2 id="receipts-title">Annual fishing revenue</h2><p id="receipts-subtitle"></p></div></div><div class="plot-wrap"><svg id="receipts-chart" class="receipts-chart" role="img" aria-labelledby="receipts-title"></svg><div id="receipts-empty" class="chart-empty" hidden></div></div></section>
+          <details class="method-details records-details"><summary>View the underlying annual records</summary><div id="receipts-table-wrap" class="table-wrap"><table><caption>Annual fiscal records · AUD million</caption><thead><tr><th scope="col">Year</th><th scope="col" id="revenue-value-header">Revenue</th><th scope="col">Record</th></tr></thead><tbody id="receipts-table"></tbody></table></div></details>
+        </section>
+        <section class="data-boundary"><div class="boundary-symbol" aria-hidden="true">i</div><div><h3>From estimates to collections</h3><p>The model tracks an activity-based revenue signal. Monthly expected fees, invoices and cash collections require separate agreement and finance records.</p></div><a class="quiet-link" href="#methods" data-go="methods">Understand the model <span aria-hidden="true">→</span></a></section>
+      </section>
+      <section id="page-history" class="page" aria-labelledby="history-title" hidden>
+        <div class="page-intro"><div><div class="eyebrow">02 / Fishing activity</div><h1 id="history-title">Fishing activity &amp; fleet</h1><p>Explore fishing effort, active vessels and regional patterns over time.</p></div><button type="button" class="export-button" id="export-monthly">Export this view <span aria-hidden="true">↓</span></button></div>
         <div class="scope-note" id="history-scope">Loading the scope and provenance of the observations.</div>
         <div class="chart-toolbar">
           <label class="control-label" for="gear-select">Fleet / gear<select id="gear-select"></select></label>
@@ -27,33 +76,124 @@
         </div>
         <div class="inspection-bar"><div id="period-description"></div><label for="month-select"><span id="inspect-label">Inspect month</span><select id="month-select"></select></label></div>
         <div class="year-legend" id="year-legend" aria-label="Years shown" hidden></div>
+        <div id="activity-snapshot" class="activity-snapshot" aria-label="Selected month summary">
+          <div class="snapshot-period"><span class="eyebrow">Selected observations</span><strong id="snapshot-month"></strong><span id="snapshot-gear"></span></div>
+          <div><span>Apparent fishing hours</span><strong id="snapshot-hours"></strong></div>
+          <div><span>Active vessels</span><strong id="snapshot-vessels"></strong></div>
+          <div><span>Active vessel-days</span><strong id="snapshot-days"></strong></div>
+        </div>
         <div id="history-chart-area">
-          <section class="chart-section" id="effort-section"><div class="chart-heading"><div><h2 id="effort-title">Fishing effort</h2><p id="effort-subtitle"></p></div><div class="chart-detail" id="effort-detail"></div></div><div class="plot-wrap"><svg id="effort-chart" class="history-chart" role="img" aria-labelledby="effort-title"></svg><div class="chart-empty" id="effort-empty" hidden></div></div></section>
+          <section class="chart-section" id="effort-section"><div class="chart-heading"><div><h2 id="effort-title">Fishing effort</h2><p id="effort-subtitle"></p></div><div class="chart-detail" id="effort-detail"></div></div><p class="measurement-note">Fishing hours measure classified activity. They are not directly comparable measures of catch or fishing intensity across longline and purse-seine vessels.</p><div class="plot-wrap"><svg id="effort-chart" class="history-chart" role="img" aria-labelledby="effort-title"></svg><div class="chart-empty" id="effort-empty" hidden></div></div></section>
           <section class="chart-section" id="fleet-section"><div class="chart-heading"><div><h2 id="fleet-title">Observed fleet</h2><p id="fleet-subtitle"></p></div><div class="chart-detail" id="fleet-detail"></div></div><div class="fleet-controls"><label for="fleet-view">Compare vessels <select id="fleet-view"><option value="groups">Flag / JV group</option><option value="methods">Fishing method</option></select></label><button type="button" class="text-button" id="export-vessels">Export vessels ↓</button></div><div class="year-legend fleet-legend" id="fleet-legend"></div><div class="plot-wrap"><svg id="fleet-chart" class="history-chart" role="img" aria-labelledby="fleet-title"></svg><div class="fleet-facets" id="fleet-facets" hidden></div><div class="chart-empty" id="fleet-empty" hidden></div></div><p class="chart-footnote" id="fleet-note"></p></section>
           <section class="chart-section" id="share-section"><div class="chart-heading"><div><h2 id="share-title">Kiribati’s share of observed regional time</h2><p id="share-subtitle"></p></div><div class="chart-detail" id="share-detail"></div></div><div class="plot-wrap"><svg id="share-chart" class="history-chart" role="img" aria-labelledby="share-title"></svg><div class="chart-empty" id="share-empty" hidden></div></div></section>
         </div>
         <section class="data-boundary"><div class="boundary-symbol" aria-hidden="true">↔</div><div><h3>Vessel movements need a different record.</h3><p id="movement-note">Entry and exit events require verified crossings or complete tracks. The available monthly observations are not a crossing ledger.</p></div><button type="button" class="text-button" data-open-sources>See definitions <span aria-hidden="true">→</span></button></section>
       </section>
-      <section id="page-revenue" class="page" aria-labelledby="revenue-title" hidden>
-        <div class="page-intro"><div><div class="eyebrow">The revenue outlook</div><h1 id="revenue-title">The model and the record.</h1><p>Explore the revenue model developed in this analysis, alongside recorded annual receipts.</p></div></div>
-        <section class="forecast-section" id="forecast-section" hidden aria-labelledby="forecast-title">
-          <div class="chart-heading"><div><h2 id="forecast-title">Existing revenue forecast model</h2><p id="forecast-subtitle"></p></div><button type="button" class="text-button" id="export-model">Export model ↓</button></div>
-          <div class="forecast-summary"><div><strong id="forecast-growth"></strong><span id="forecast-growth-label"></span></div><label class="control-label" for="forecast-scale">Model scale<select id="forecast-scale"><option value="index">Index · 2019 = 100</option><option value="aud">AUD million equivalent</option></select></label></div>
-          <div class="year-legend model-legend"><span><i class="model-actual"></i>Actual licence receipts</span><span><i class="model-central"></i>Preferred model · 18h</span><span><i class="model-band"></i>Model sensitivity range</span><span><i class="model-extension"></i>Seasonal extension</span></div>
-          <svg id="forecast-chart" class="forecast-chart" role="img" aria-labelledby="forecast-title"></svg>
-          <p class="chart-footnote" id="forecast-interpretation"></p>
-          <details class="method-details"><summary>Model assumptions and interpretation</summary><div id="forecast-method"></div></details>
-        </section>
-        <h2 class="actuals-heading">Recorded annual receipts</h2>
-        <div class="scope-note" id="revenue-scope"></div>
-        <label class="control-label" for="revenue-definition">Revenue definition<select id="revenue-definition"><option value="licence">Fishing licence revenue</option><option value="broad">Licences and related receipts</option></select></label>
-        <section class="chart-section revenue-chart-section"><div class="chart-heading"><div><h2 id="receipts-title">Annual fishing revenue</h2><p id="receipts-subtitle"></p></div></div><div class="plot-wrap"><svg id="receipts-chart" class="receipts-chart" role="img" aria-labelledby="receipts-title"></svg><div id="receipts-empty" class="chart-empty" hidden></div></div></section>
-        <div id="receipts-table-wrap" class="table-wrap"><table><caption>Underlying annual records</caption><thead><tr><th scope="col">Year</th><th scope="col" id="revenue-value-header">Revenue</th><th scope="col">Record</th></tr></thead><tbody id="receipts-table"></tbody></table></div>
-        <section class="data-boundary"><div class="boundary-symbol" aria-hidden="true">≠</div><div><h3>Observed effort is not a payment record.</h3><p>Expected fees, invoices and cash receipts will need their own agreement and finance records before a monthly cumulative view can be shown.</p></div></section>
-      </section>
+<section id="page-methods" class="page methods-page" aria-labelledby="methods-title" hidden>
+  <header class="methods-intro">
+    <p class="methods-eyebrow">03 / How it works</p>
+    <h1 id="methods-title">From vessel signals<br> to a revenue estimate.</h1>
+    <p class="methods-lead">The model connects observed fishing activity with economic assumptions. Each step answers a different question; together, they form an indicator of revenue change.</p>
+  </header>
+
+  <figure class="methods-flow" aria-labelledby="methods-flow-title" aria-describedby="methods-flow-caption">
+    <div class="methods-flow-heading">
+      <h2 id="methods-flow-title">How the estimate is built</h2>
+      <span class="methods-flow-key"><span aria-hidden="true"></span>Five connected steps</span>
+    </div>
+    <ol class="methods-stages">
+      <li class="methods-stage">
+        <div class="methods-node">
+          <span class="methods-number"><span class="methods-sr-only">Step </span>01</span>
+          <svg viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false"><path d="m15 29 7-15 5 15M12 32h26l-5 7H18l-6-7Z"/><path d="M24 17v-7m-4 17h9M7 42c3-3 6 3 9 0s6 3 9 0 6 3 9 0 6 3 9 0"/><path d="M32 10a10 10 0 0 1 7 7M34 5a16 16 0 0 1 10 10" class="methods-icon-accent"/></svg>
+        </div>
+        <p class="methods-stage-label">Global Fishing Watch</p>
+        <h3>Vessel tracking<br> &amp; machine learning</h3>
+        <p>Vessel positions and GFW’s machine-learning models identify patterns consistent with fishing.</p>
+      </li>
+      <li class="methods-stage">
+        <div class="methods-node">
+          <span class="methods-number"><span class="methods-sr-only">Step </span>02</span>
+          <svg viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false"><path d="M8 37V11m0 26h32"/><path d="m12 29 7-7 6 3 7-13 8 4"/><circle cx="19" cy="22" r="2.5"/><circle cx="32" cy="12" r="2.5"/><path d="M14 37v-5m9 5v-7m9 7V23" class="methods-icon-accent"/></svg>
+        </div>
+        <p class="methods-stage-label">Observed activity</p>
+        <h3>Apparent fishing,<br> measured over time</h3>
+        <p>Summarise fishing activity and tracking coverage by vessel and day, keeping the two measures distinct.</p>
+      </li>
+      <li class="methods-stage">
+        <div class="methods-node">
+          <span class="methods-number"><span class="methods-sr-only">Step </span>03</span>
+          <svg viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false"><rect x="6" y="10" width="16" height="27" rx="2"/><rect x="27" y="10" width="16" height="27" rx="2"/><path d="M10 6v8m8-8v8m13-8v8m8-8v8M6 19h16m5 0h16"/><path d="m10 28 3 3 5-6m13 3 3 3 5-6" class="methods-icon-accent"/></svg>
+        </div>
+        <p class="methods-stage-label">Comparable observations</p>
+        <h3>The same vessels.<br> Comparable dates.</h3>
+        <p>Match the same physical vessels and calendar dates across years, keeping observations with sufficient tracking coverage.</p>
+      </li>
+      <li class="methods-stage">
+        <div class="methods-node">
+          <span class="methods-number"><span class="methods-sr-only">Step </span>04</span>
+          <svg viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false"><path d="M8 12h32M8 24h32M8 36h32"/><circle cx="18" cy="12" r="4"/><circle cx="31" cy="24" r="4"/><circle cx="15" cy="36" r="4" class="methods-icon-accent"/></svg>
+        </div>
+        <p class="methods-stage-label">Economic assumptions</p>
+        <h3>Activity translated<br> into revenue change</h3>
+        <p>Apply assumed fees, partial fishing-day adjustments and exchange rates, with separate treatment of fishing methods.</p>
+      </li>
+      <li class="methods-stage methods-stage-output">
+        <div class="methods-node">
+          <span class="methods-number"><span class="methods-sr-only">Step </span>05</span>
+          <svg viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false"><path d="M8 10v29h33"/><path d="m12 29 8-5 7 2 12-15"/><path d="m12 34 8-5 7 2 12-12M12 24l8-5 7 2L39 7" class="methods-icon-range"/><circle cx="39" cy="11" r="2.5"/></svg>
+        </div>
+        <p class="methods-stage-label">Model output</p>
+        <h3>A revenue estimate,<br> with sensitivity</h3>
+        <p>Show the preferred path alongside alternative assumptions, and compare historical estimates with recorded receipts.</p>
+        <div class="methods-output-unit"><span>Reference scale</span><strong>2019 = 100</strong></div>
+      </li>
+    </ol>
+    <figcaption id="methods-flow-caption">Machine learning belongs to GFW’s activity classification. The revenue estimate is a separate economic calculation built from those observations.</figcaption>
+  </figure>
+
+  <section class="methods-reading" aria-labelledby="methods-reading-title">
+    <div class="methods-reading-intro">
+      <p class="methods-eyebrow">Reading the result</p>
+      <h2 id="methods-reading-title">An indicator,<br> with a clear frame.</h2>
+    </div>
+    <dl class="methods-interpretation">
+      <div><dt>Observation window</dt><dd>The latest revenue-model extension uses <strong>January–August 2026</strong>. The fishing-activity dashboard has its own, later cutoff.</dd></div>
+      <div><dt>Range of assumptions</dt><dd>The shaded range shows how model choices change the estimate. It is <strong>a sensitivity range</strong>, not a statistical confidence interval.</dd></div>
+      <div><dt>Model and receipts</dt><dd>The AUD scale expresses a <strong>model-equivalent value</strong>. Seasonal extensions are not full-year cash forecasts, invoices or recorded collections.</dd></div>
+    </dl>
+  </section>
+
+  <section class="methods-detail-section" aria-labelledby="methods-details-title">
+    <h2 id="methods-details-title">A closer look</h2>
+    <div class="methods-disclosures">
+      <details>
+        <summary>Which observations enter the revenue model?<span aria-hidden="true" class="methods-disclosure-mark"></span></summary>
+        <div class="methods-disclosure-body"><p>The revenue analysis starts from a fixed reference population of 648 vessels. The preferred specification compares the same physical vessel and calendar date across years, requiring at least 18 represented tracking hours on the compared dates. Actual inclusion depends on the observations available for each comparison.</p><p>This selected sample differs from the 402-group screened population used for the broad fishing-activity charts. Neither population is a census of every vessel fishing in Kiribati. Missing tracking is unknown, not proof of inactivity or departure.</p></div>
+      </details>
+      <details>
+        <summary>How are activity and economic assumptions combined?<span aria-hidden="true" class="methods-disclosure-mark"></span></summary>
+        <div class="methods-disclosure-body"><p>The saved model applies fixed method coefficients and partial purse-seine day allocation. Assumed purse-seine unit fees are denominated in USD and converted to AUD using period-specific exchange rates; assumed longline unit values are fixed in AUD. The currency split is a model assumption, not verified contract coverage.</p><p>GFW fishing hours, observed active vessel-days, chargeable licence days and cash receipts measure different things. Fishing-related hours are also not equivalent units of fishing power across gears.</p></div>
+      </details>
+      <details>
+        <summary>Why use 2019 as the reference?<span aria-hidden="true" class="methods-disclosure-mark"></span></summary>
+        <div class="methods-disclosure-body"><p>The path is anchored once to recorded 2019 fishing-licence receipts of A$210.64196068 million, shown as an index of 100. Later actual receipts provide historical comparisons; they do not reset the model’s reference.</p><p>The 2019–2024 path uses full-year comparisons. The 2025 and 2026 extensions link January–August growth to that historical path. Activity and payments later in the year can change the eventual full-year outcome. The separate broader “licences and related receipts” series is not substituted into this narrow licence-revenue model.</p></div>
+      </details>
+      <details>
+        <summary>What does the sensitivity range include?<span aria-hidden="true" class="methods-disclosure-mark"></span></summary>
+        <div class="methods-disclosure-body"><p>The saved range spans the unadjusted weighted-day proxy and matched specifications using tracking thresholds from 1 to 18 hours. Each model path is linked over time before the range is calculated.</p><p>This shows variation across those specifications. It has no assigned probability and does not capture every source of uncertainty, such as unobserved fishing, actual agreement prices or payment timing.</p></div>
+      </details>
+    </div>
+  </section>
+</section>
+
       <section id="page-sources" class="page" aria-labelledby="sources-title" hidden>
-        <div class="page-intro"><div><div class="eyebrow">What the numbers mean</div><h1 id="sources-title">Evidence you can trace.</h1><p>Source files, measurement definitions and the limits that matter for interpretation.</p></div></div>
-        <div id="source-summary" class="source-summary"></div>
+        <div class="page-intro"><div><div class="eyebrow">04 / Data &amp; sources</div><h1 id="sources-title">The evidence behind the estimates</h1><p>Trace the source data, understand the measures and download the evidence.</p></div></div>
+        <div class="coverage-register" aria-label="Data coverage">
+          <div><span>Fishing activity</span><strong id="source-effort-cutoff">September 2026</strong><small>Monthly observations · since January 2024</small></div>
+          <div><span>Revenue model</span><strong id="source-model-cutoff">August 2026</strong><small>Historical model and seasonal extensions</small></div>
+          <div><span>Recorded licence receipts</span><strong id="source-receipts-cutoff">2024</strong><small>Annual fiscal records · narrow definition</small></div>
+        </div><div id="source-summary" class="source-summary"></div><h2 class="section-title">Reading the data</h2>
         <div id="definitions" class="definitions"></div>
         <details class="method-details" id="sources-reuse"><summary>Sources and reuse</summary><div>
           <p>This is a free public-interest research tool. It is not an official institutional service; no endorsement or approval by a government, data provider or other institution is implied.</p>
@@ -65,7 +205,7 @@
       </section>
       <div id="load-error" class="load-error" role="alert" hidden></div>
     </main>
-    <footer class="app-footer"><span>Pacific Fisheries Monitor <b>·</b> Kiribati <b>·</b> <a href="https://globalfishingwatch.org/" target="_blank" rel="noopener noreferrer">Powered by Global Fishing Watch</a></span><span id="footer-scope">Historical observations · no live feed</span></footer>
+    <footer class="app-footer"><div><a class="footer-brand" href="#overview" data-go="overview">Kiribati Fisheries</a><p>An independent research dashboard.<br><a href="https://globalfishingwatch.org/" target="_blank" rel="noopener noreferrer">Powered by Global Fishing Watch ↗</a></p></div><div class="footer-data"><p id="data-cutoff">Loading data coverage…</p><p id="footer-scope">Historical observations · no live feed</p><a href="#sources" data-go="sources">Sources, definitions &amp; reuse</a></div></footer>
   </div>
   <div id="chart-tooltip" class="chart-tooltip" role="tooltip" hidden></div><div id="status" class="sr-only" aria-live="polite"></div>
   <script src="vendor/d3.v7.min.js"></script>

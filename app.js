@@ -22,7 +22,7 @@
   const years = [...new Set(allMonths.map(m => Number(m.slice(0, 4))))];
   const yearColors = new Map(years.map((year, i) => [year, ['var(--blue)', 'var(--orange)', 'var(--teal)', 'var(--purple)'][i % 4]]));
   const gears = data.gears?.length ? data.gears : [{id:'all',label:'All gears'}];
-  const state = {page:'history', gear:gears[0].id, range:'recent', mode:'timeline', month:latestMonth, calendarMonth:latestDate.getUTCMonth(), revenue:'licence', forecastScale:'index',fleetView:'groups'};
+  const state = {page:'overview', gear:gears[0].id, range:'recent', mode:'timeline', month:latestMonth, calendarMonth:latestDate.getUTCMonth(), revenue:'licence', forecastScale:'index',fleetView:'groups'};
   const sources = Array.isArray(data.sources) ? data.sources : Object.entries(data.sources || {}).map(([id, source]) => ({id,...source}));
   const tooltip = $('chart-tooltip');
   let plots = [];
@@ -95,15 +95,44 @@
       return {...spec,rows};
     });
   }
-  function setPage(page) {
-    if (!['history','revenue','sources'].includes(page)) return;
+  const pages = ['overview','revenue','history','methods','sources'];
+  function setPage(page, {historyMode='push', focus=false} = {}) {
+    if (!pages.includes(page)) page = 'overview';
     state.page = page;
-    document.querySelectorAll('[data-page]').forEach(button => button.setAttribute('aria-current', button.dataset.page === page ? 'page' : 'false'));
-    ['history','revenue','sources'].forEach(name => $('page-'+name).hidden = name !== page);
-    history.replaceState(null, '', '#'+page);
+    document.querySelectorAll('[data-page]').forEach(button => {
+      if (button.dataset.page === page) button.setAttribute('aria-current','page');
+      else button.removeAttribute('aria-current');
+    });
+    pages.forEach(name => $('page-'+name).hidden = name !== page);
+    if (historyMode === 'replace') history.replaceState(null, '', '#'+page);
+    else if (historyMode === 'push' && location.hash !== '#'+page) history.pushState(null, '', '#'+page);
     hideTooltip();
     if (page === 'history') drawHistory();
     if (page === 'revenue') drawRevenue();
+    const title = $('page-'+page).querySelector('h1').textContent.trim().replace(/\s+/g,' ');
+    document.title = page === 'overview' ? title : title + ' · Kiribati Fisheries';
+    if (focus) { $('main-content').focus({preventScroll:true}); window.scrollTo({top:0,behavior:'instant'}); }
+    announce(title);
+  }
+  function renderOverview() {
+    const latest = data.forecasts?.latest, growth = data.forecasts?.growth?.at(-1);
+    const activity = data.monthly.find(row => row.month === latestMonth && row.gear === 'all');
+    const receipt = (data.receipts || []).filter(row => row.value != null).sort((a,b)=>a.year-b.year).at(-1);
+    const modelCutoff = data.forecasts?.meta?.sourceCutoff;
+    const signed = value => (value >= 0 ? '+' : '') + num(value,1) + '%';
+    $('overview-growth').textContent = growth ? signed(growth.centralGrowthPct) : '—';
+    $('overview-model-period').textContent = latest ? `Jan–Aug ${latest.year} vs Jan–Aug ${latest.year-1}` : 'No model observation';
+    $('overview-vessels').textContent = num(activity?.observedVessels);
+    $('overview-activity-period').textContent = `${longMonth(latestDate)} · screened observed fleet`;
+    $('overview-receipts').textContent = receipt ? `A$${num(receipt.value,1)}m` : '—';
+    $('overview-receipt-period').textContent = receipt ? `${receipt.year} · annual licence receipts` : 'No fiscal record';
+    if (modelCutoff) {
+      const date = new Date(modelCutoff+'T00:00:00Z');
+      $('revenue-cutoff').textContent = d3.utcFormat('%d %B %Y')(date);
+      $('source-model-cutoff').textContent = longMonth(date);
+    }
+    $('source-effort-cutoff').textContent = longMonth(latestDate);
+    $('source-receipts-cutoff').textContent = receipt ? receipt.year : '—';
   }
   function sourceLabel(id) {const source = sources.find(s => s.id === id);return source?.title || source?.label || source?.name || id;}
   function updateControls() {
@@ -125,7 +154,7 @@
   function svgFrame(element, domain, unit, height) {
     const width = element.getBoundingClientRect().width;
     if (width < 100) return null;
-    const H = height || (width < 500 ? 190 : 205);
+    const H = height || (window.innerWidth <= 420 ? 210 : window.innerWidth <= 760 ? 220 : 240);
     const margin = {left:60,right:21,top:26,bottom:40};
     const w = width-margin.left-margin.right, h=H-margin.top-margin.bottom;
     const svg = d3.select(element);svg.selectAll('*').remove();svg.attr('viewBox', `0 0 ${width} ${H}`);
@@ -258,6 +287,15 @@
   }
   function hideTooltip(){tooltip.hidden=true;plots.forEach(c=>{c.guide.attr('visibility','hidden');c.markers.selectAll('*').remove();});}
   function updateDetails(){
+    $('activity-snapshot').hidden = state.mode !== 'timeline';
+    if (state.mode === 'timeline') {
+      const row = gearRows().find(record => record.month === state.month);
+      $('snapshot-month').textContent = longMonth(parseMonth(state.month));
+      $('snapshot-gear').textContent = gears.find(gear => gear.id === state.gear)?.label || state.gear;
+      $('snapshot-hours').textContent = num(row?.hours);
+      $('snapshot-vessels').textContent = num(row?.observedVessels);
+      $('snapshot-days').textContent = num(row?.activeVesselDays);
+    }
     defs.forEach(def=>{
       if(def.id==='fleet')return;
       const rows=metricRows(def);
@@ -279,23 +317,27 @@
     $('forecast-section').hidden=!rows.length;if(!rows.length)return;
     const meta=forecast.meta||{},latest=forecast.latest||rows.at(-1),growth=forecast.growth?.at(-1),aud=state.forecastScale==='aud';
     const keys=aud?{actual:'actualAudMillion',central:'centralAudMillion',low:'lowAudMillion',high:'highAudMillion'}:{actual:'actualIndex',central:'centralIndex',low:'lowIndex',high:'highIndex'};
-    $('forecast-subtitle').textContent='Original narrow licence model · preferred 18-hour tracking screen · through '+(meta.latestPeriod||'the latest saved period');
+    $('forecast-subtitle').textContent='Full-year history through 2024 · January–August extensions for 2025–2026';
     $('forecast-growth').textContent=(growth?.centralGrowthPct>=0?'+':'')+num(growth?.centralGrowthPct,1)+'%';
-    $('forecast-growth-label').textContent=`${latest.year} modelled change · January–August versus the same months of ${latest.year-1}`;
+    $('forecast-growth-label').textContent=`January–August ${latest.year} vs January–August ${latest.year-1}`;
     const low=latest[keys.low],high=latest[keys.high],center=latest[keys.central];
+    $('forecast-level').textContent=num(latest.centralIndex,1);
+    $('forecast-level-label').textContent='Model index · 2019 = 100';
+    $('forecast-level-period').textContent=`${latest.year} · seasonally linked estimate`;
     $('forecast-interpretation').textContent=`${latest.year} preferred ${aud?'model-equivalent':'index'}: ${aud?'A$':''}${num(center,1)}${aud?'m':''}. Saved sensitivity range: ${aud?'A$':''}${num(low,1)}–${num(high,1)}${aud?'m':''}. The dashed 2025–2026 path links January–August growth; it is not a full-year cash forecast.`;
     $('forecast-method').innerHTML=[meta.bandDefinition,meta.periodNote,meta.audScaleNote,meta.assumptionNote,meta.interpretationNote].filter(Boolean).map(text=>`<p>${esc(text)}</p>`).join('');
     const values=rows.flatMap(row=>Object.values(keys).map(key=>row[key])).filter(value=>value!=null),extent=d3.extent(values),pad=(extent[1]-extent[0])*.13;
-    const el=$('forecast-chart'),width=el.getBoundingClientRect().width,c=svgFrame(el,[Math.max(0,extent[0]-pad),extent[1]+pad],aud?'AUD million · model-equivalent after 2024':'Index · 2019 = 100',width<420?265:width<760?280:300);if(!c)return;
+    const el=$('forecast-chart'),width=el.getBoundingClientRect().width,c=svgFrame(el,[Math.max(0,extent[0]-pad),extent[1]+pad],aud?'AUD million · model-equivalent after 2024':'Index · 2019 = 100',window.innerWidth<=420?280:window.innerWidth<=760?300:window.innerWidth<=980?340:380);if(!c)return;
     const x=d3.scaleLinear().domain(d3.extent(rows,row=>row.year)).range([5,c.w-5]),ticks=c.width<450?[rows[0].year,rows[2].year,rows[4].year,rows.at(-1).year]:rows.map(row=>row.year);
     const firstExtension=rows.find(row=>row.isSeasonalExtension);
+    if (firstExtension && width > 700) c.svg.append('text').attr('x',c.margin.left+x(firstExtension.year)).attr('y',13).attr('text-anchor','middle').style('font-size','10px').text('2025–26 · Jan–Aug extensions');
     if(firstExtension)c.g.insert('rect',':first-child').attr('x',x(firstExtension.year-.5)).attr('width',c.w-x(firstExtension.year-.5)).attr('height',c.h).attr('fill','var(--soft)');
     c.g.append('g').attr('transform',`translate(0,${c.h})`).call(d3.axisBottom(x).tickValues(ticks).tickFormat(d3.format('d')).tickSize(0)).call(axis=>axis.selectAll('text').attr('dy','1.5em'));
     c.g.append('path').datum(rows).attr('fill','var(--teal)').attr('opacity',.13).attr('d',d3.area().x(row=>x(row.year)).y0(row=>c.y(row[keys.low])).y1(row=>c.y(row[keys.high])));
     const line=key=>d3.line().defined(row=>row[key]!=null).x(row=>x(row.year)).y(row=>c.y(row[key]));
     const historic=rows.filter(row=>!row.isSeasonalExtension),extension=[historic.at(-1),...rows.filter(row=>row.isSeasonalExtension)].filter(Boolean);
-    c.g.append('path').datum(historic).attr('fill','none').attr('stroke','var(--teal)').attr('stroke-width',2.5).attr('d',line(keys.central));
-    c.g.append('path').datum(extension).attr('fill','none').attr('stroke','var(--teal)').attr('stroke-width',2.5).attr('stroke-dasharray','6 4').attr('d',line(keys.central));
+    c.g.append('path').datum(historic).attr('fill','none').attr('stroke','var(--teal)').attr('stroke-width',2.7).attr('d',line(keys.central));
+    c.g.append('path').datum(extension).attr('fill','none').attr('stroke','var(--teal)').attr('stroke-width',2.7).attr('stroke-dasharray','6 4').attr('d',line(keys.central));
     c.g.append('path').datum(rows).attr('fill','none').attr('stroke','var(--ink)').attr('stroke-width',1.65).attr('d',line(keys.actual));
     rows.filter(row=>row[keys.actual]!=null).forEach(row=>c.g.append('circle').attr('cx',x(row.year)).attr('cy',c.y(row[keys.actual])).attr('r',3).attr('fill','var(--ink)'));
     c.g.append('circle').attr('cx',x(latest.year)).attr('cy',c.y(center)).attr('r',4).attr('fill','var(--paper)').attr('stroke','var(--teal)').attr('stroke-width',2);
@@ -316,7 +358,7 @@
     if(!valid.length)return;
     const el=$('receipts-chart'),c=svgFrame(el,[0,d3.max(valid,row=>Number(row.value))*1.17],'AUD million',el.getBoundingClientRect().width<500?270:310);if(!c)return;
     const x=d3.scaleBand().domain(rows.map(row=>row.year)).range([0,c.w]).padding(.38);
-    c.g.append('g').attr('transform',`translate(0,${c.h})`).call(d3.axisBottom(x).tickSize(0)).call(axis=>axis.selectAll('text').attr('dy','1.5em'));
+    c.g.append('g').attr('transform',`translate(0,${c.h})`).call(d3.axisBottom(x).tickValues(c.width<450?rows.filter((row,index)=>index%2===0||index===rows.length-1).map(row=>row.year):rows.map(row=>row.year)).tickSize(0)).call(axis=>axis.selectAll('text').attr('dy','1.5em'));
     c.g.selectAll('.revenue-bar').data(valid).join('rect').attr('class','revenue-bar').attr('x',row=>x(row.year)).attr('y',row=>c.y(row.value)).attr('width',x.bandwidth()).attr('height',row=>c.y(0)-c.y(row.value)).attr('rx',2).attr('fill','var(--teal)');
     c.g.selectAll('.revenue-label').data(valid).join('text').attr('class','revenue-label').attr('text-anchor','middle').attr('x',row=>x(row.year)+x.bandwidth()/2).attr('y',row=>c.y(row.value)-8).text(row=>num(row.value,c.width<450?0:1));
     c.g.selectAll('.revenue-hit').data(rows).join('rect').attr('x',row=>x(row.year)-x.step()*.16).attr('y',0).attr('width',x.step()).attr('height',c.h).attr('fill','transparent').on('pointermove',(event,row)=>{tooltip.innerHTML=`<strong>${row.year} · ${broad?'licences & related':'licence revenue'}</strong><div class="tooltip-row"><span>AUD million</span><b>${num(row.value,1)}</b></div><div class="tooltip-note">${esc(row.status||'Recorded annual value')}</div>`;tooltip.hidden=false;positionTooltip(event);}).on('pointerleave',hideTooltip);
@@ -338,7 +380,7 @@
     $('definitions').innerHTML=definitions.map(([title,text])=>`<section class="definition"><h2>${esc(title)}</h2><p>${esc(text)}</p></section>`).join('');
     $('source-list').innerHTML=sources.map((source,i)=>{
       const title=source.title||source.label||source.name||source.id||'Source',path=source.path||source.file||source.localPath||source.paths?.join(' · '),url=safeURL(source.url||source.sourceUrl),note=source.note||source.description||source.scope||'';
-      return `<article class="source-entry"><span class="source-index">${String(i+1).padStart(2,'0')}</span><div><h3>${esc(title)}</h3>${note?`<p>${esc(note)}</p>`:''}${path?`<p class="source-path">${esc(path)}</p>`:''}${url?`<p><a href="${esc(url)}" target="_blank" rel="noopener noreferrer">Open source document ↗</a></p>`:''}</div></article>`;
+      return `<article class="source-entry"><span class="source-index">${String(i+1).padStart(2,'0')}</span><div><h3>${esc(title)}</h3>${note?`<p>${esc(note)}</p>`:''}${path?`<details class="source-provenance"><summary>Source file references</summary><p class="source-path">${esc(path)}</p></details>`:''}${url?`<p><a href="${esc(url)}" target="_blank" rel="noopener noreferrer">Open source document ↗</a></p>`:''}</div></article>`;
     }).join('');
   }
   function exportCSV(){
@@ -362,7 +404,7 @@
   function downloadRows(filename,fields,records){const quote=value=>'"'+String(value??'').replace(/"/g,'""')+'"';const url=URL.createObjectURL(new Blob(['\ufeff'+[fields,...records].map(row=>row.map(quote).join(',')).join('\r\n')],{type:'text/csv;charset=utf-8'}));const link=document.createElement('a');link.href=url;link.download=filename;link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
   $('gear-select').innerHTML=gears.map(gear=>`<option value="${esc(gear.id)}">${esc(gear.label)}</option>`).join('');
   $('gear-select').value=state.gear;
-  $('history-scope').innerHTML='<strong>Observed fishing in Kiribati’s EEZ.</strong> Primary charts use the project’s screened fleet. The regional panel uses selected tracked dates from a separate analysis; its sample varies by year.';
+  $('history-scope').innerHTML='<strong>Gilbert, Phoenix and Line waters · all flags.</strong> Fishing effort and fleet counts use a fixed screen of 402 vessel groups. These observations describe the tracked sample, rather than a census of the national fleet.';
   defs.forEach(def=>$(def.id+'-title').textContent=def.title);
   const cutoff=effortCoverage().cutoff;
   const regionalCutoff=data.meta?.latestRegionalDate?new Date(data.meta.latestRegionalDate+'T00:00:00Z'):null;
@@ -370,9 +412,11 @@
   $('footer-scope').textContent='Historical observations · fishing through '+d3.utcFormat('%d %b %Y')(cutoff)+(regionalCutoff?' · regional through '+monthName(regionalCutoff):'');
   document.querySelector('[data-range="year"]').textContent=latestMonth.slice(0,4);
   $('revenue-definition').querySelector('[value="broad"]').disabled=!data.broadReceipts?.length;
-  document.querySelectorAll('[data-page]').forEach(button=>button.addEventListener('click',()=>setPage(button.dataset.page)));
-  document.querySelector('.brand').addEventListener('click',event=>{event.preventDefault();setPage('history');});
-  document.querySelectorAll('[data-open-sources]').forEach(button=>button.addEventListener('click',()=>setPage('sources')));
+  document.querySelectorAll('[data-page]').forEach(button=>button.addEventListener('click',()=>setPage(button.dataset.page,{focus:true})));
+  document.querySelectorAll('[data-go]').forEach(link=>link.addEventListener('click',event=>{event.preventDefault();setPage(link.dataset.go,{focus:true});}));
+  window.addEventListener('hashchange',()=>{if(pages.includes(location.hash.slice(1)))setPage(location.hash.slice(1),{historyMode:'none',focus:true});});
+  document.querySelector('.brand').addEventListener('click',event=>{event.preventDefault();setPage('overview',{focus:true});});
+  document.querySelectorAll('[data-open-sources]').forEach(button=>button.addEventListener('click',()=>setPage('sources',{focus:true})));
   document.querySelectorAll('[data-range]').forEach(button=>button.addEventListener('click',()=>{state.range=button.dataset.range;drawHistory();announce('Historical period updated.');}));
   document.querySelectorAll('[data-mode]').forEach(button=>button.addEventListener('click',()=>{state.mode=button.dataset.mode;drawHistory();announce(state.mode==='seasonal'?'Years are aligned by calendar month.':'Chronological timeline shown.');}));
   $('gear-select').addEventListener('change',event=>{state.gear=event.target.value;drawHistory();announce('Fleet filter updated.');});
@@ -383,6 +427,6 @@
   $('fleet-view').addEventListener('change',event=>{state.fleetView=event.target.value;drawHistory();announce('Vessel comparison updated.');});
   $('export-vessels').addEventListener('click',exportVessels);
   $('export-monthly').addEventListener('click',exportCSV);
-  renderSources();setPage(location.hash.slice(1)||'history');
+  renderSources();renderOverview();setPage(location.hash.slice(1)||'overview',{historyMode:'replace'});
   new ResizeObserver(entries=>{const width=entries[0].contentRect.width;if(Math.abs(width-lastWidth)>1){lastWidth=width;if(state.page==='history')drawHistory();if(state.page==='revenue')drawRevenue();}}).observe(document.querySelector('.app-shell'));
 })();
