@@ -95,7 +95,7 @@
       return {...spec,rows};
     });
   }
-  const pages = ['overview','revenue','history','methods','sources'];
+  const pages = ['overview','revenue','tuvalu','history','methods','sources'];
   function setPage(page, {historyMode='push', focus=false} = {}) {
     if (!pages.includes(page)) page = 'overview';
     state.page = page;
@@ -106,9 +106,12 @@
     pages.forEach(name => $('page-'+name).hidden = name !== page);
     if (historyMode === 'replace') history.replaceState(null, '', '#'+page);
     else if (historyMode === 'push' && location.hash !== '#'+page) history.pushState(null, '', '#'+page);
+    $('data-cutoff').textContent=page==='tuvalu'?'Tuvalu model inputs through 31 Aug 2026':'Kiribati fishing data through '+d3.utcFormat('%d %b %Y')(effortCoverage().cutoff);
+    $('footer-scope').textContent=page==='tuvalu'?'Tuvalu snapshot reviewed 15 Oct 2026 · no live feed':'Historical observations · regional and revenue model through Aug 2026';
     hideTooltip();
     if (page === 'history') drawHistory();
     if (page === 'revenue') drawRevenue();
+    if (page === 'tuvalu') drawTuvalu();
     const title = $('page-'+page).querySelector('h1').textContent.trim().replace(/\s+/g,' ');
     document.title = page === 'overview' ? title : title + ' · Kiribati Fisheries';
     if (focus) { $('main-content').focus({preventScroll:true}); window.scrollTo({top:0,behavior:'instant'}); }
@@ -363,6 +366,57 @@
     c.g.selectAll('.revenue-label').data(valid).join('text').attr('class','revenue-label').attr('text-anchor','middle').attr('x',row=>x(row.year)+x.bandwidth()/2).attr('y',row=>c.y(row.value)-8).text(row=>num(row.value,c.width<450?0:1));
     c.g.selectAll('.revenue-hit').data(rows).join('rect').attr('x',row=>x(row.year)-x.step()*.16).attr('y',0).attr('width',x.step()).attr('height',c.h).attr('fill','transparent').on('pointermove',(event,row)=>{tooltip.innerHTML=`<strong>${row.year} · ${broad?'licences & related':'licence revenue'}</strong><div class="tooltip-row"><span>AUD million</span><b>${num(row.value,1)}</b></div><div class="tooltip-note">${esc(row.status||'Recorded annual value')}</div>`;tooltip.hidden=false;positionTooltip(event);}).on('pointerleave',hideTooltip);
   }
+  function drawTuvalu() {
+    const tuv=window.TUVALU_DATA;
+    if (!tuv?.levels?.length) {
+      $('tuvalu-interpretation').textContent='The Tuvalu snapshot could not be loaded. Please reload the dashboard.';
+      return;
+    }
+    const aud=$('tuvalu-scale').value==='aud', rows=tuv.levels, latest=rows.at(-1), factor=aud?1:100/tuv.meta.anchorAudMillion;
+    const signed=value=>(value>=0?'+':'')+num(value,1)+'%';
+    const amount=value=>value==null?'Not available':(aud?'A$':'')+num(value*factor,1)+(aud?'m':'');
+    $('tuvalu-growth').textContent=signed(tuv.growth.at(-1).value);
+    $('tuvalu-level').textContent='A$'+num(latest.central,1)+'m';
+    $('tuvalu-interpretation').textContent=`2026 model ${aud?'equivalent':'index'}: ${amount(latest.central)}. Tracking-threshold range: ${amount(latest.low)}–${amount(latest.high)}. The dashed extension is not a full-year cash forecast. The range is not a statistical confidence interval.`;
+    const chart=$('tuvalu-chart');
+    const c=svgFrame(chart,[0,d3.max(rows,r=>Math.max(r.high,r.actual??0))*factor*1.10],aud?'AUD million · model equivalent':'Index · 2019 = 100',window.innerWidth<=760?300:380);
+    if (!c) return;
+    const x=d3.scaleLinear().domain([2019,2026]).range([5,c.w-5]);
+    const ticks=c.width<450?[2019,2021,2023,2026]:rows.map(r=>r.year);
+    c.g.insert('rect',':first-child').attr('x',x(2024.5)).attr('width',c.w-x(2024.5)).attr('height',c.h).attr('fill','var(--soft)');
+    c.g.append('g').attr('transform',`translate(0,${c.h})`).call(d3.axisBottom(x).tickValues(ticks).tickFormat(d3.format('d')).tickSize(0)).call(a=>a.selectAll('text').attr('dy','1.5em'));
+    c.g.append('path').datum(rows).attr('class','tuvalu-band').attr('fill','var(--teal)').attr('opacity',.14).attr('d',d3.area().x(r=>x(r.year)).y0(r=>c.y(r.low*factor)).y1(r=>c.y(r.high*factor)));
+    const line=key=>d3.line().defined(r=>r[key]!=null).x(r=>x(r.year)).y(r=>c.y(r[key]*factor));
+    const historic=rows.filter(r=>!r.extension),extension=[historic.at(-1),...rows.filter(r=>r.extension)];
+    for (const [series,dash] of [[historic,null],[extension,'6 4']]) {
+      c.g.append('path').datum(series).attr('class',dash?'tuvalu-extension':'tuvalu-model').attr('fill','none').attr('stroke','var(--teal)').attr('stroke-width',2.7).attr('stroke-dasharray',dash).attr('d',line('central'));
+    }
+    c.g.append('path').datum(rows).attr('class','tuvalu-actual').attr('fill','none').attr('stroke','var(--ink)').attr('stroke-width',1.8).attr('d',line('actual'));
+    c.g.selectAll('.tuvalu-actual-dot').data(rows.filter(r=>r.actual!=null)).join('circle').attr('class','tuvalu-actual-dot').attr('cx',r=>x(r.year)).attr('cy',r=>c.y(r.actual*factor)).attr('r',3.5).attr('fill','var(--ink)');
+    const guide=c.g.append('line').attr('y2',c.h).attr('stroke','var(--muted)').attr('visibility','hidden');
+    const show=(event,row)=>{
+      guide.attr('x1',x(row.year)).attr('x2',x(row.year)).attr('visibility','visible');
+      tooltip.innerHTML=`<strong>${row.year} · ${row.extension?'Jan–Aug linked extension':'calendar-year comparison'}</strong><div class="tooltip-row"><span>Model estimate</span><b>${amount(row.central)}</b></div><div class="tooltip-row"><span>Reported receipts</span><b>${amount(row.actual)}</b></div><div class="tooltip-row"><span>Threshold range</span><b>${amount(row.low)}–${amount(row.high)}</b></div><div class="tooltip-note">${esc(row.withholdingReason || (row.year===2019?'Common anchor; not independent validation.':'Broader fiscal scope than the purse-seine activity model.'))}</div>`;
+      tooltip.hidden=false;positionTooltip(event);
+    };
+    c.g.selectAll('.tuvalu-point').data(rows).join('circle').attr('class','tuvalu-point').attr('cx',r=>x(r.year)).attr('cy',r=>c.y(r.central*factor)).attr('r',4).attr('fill','var(--paper)').attr('stroke','var(--teal)').attr('stroke-width',2);
+    c.g.selectAll('.tuvalu-hit').data(rows).join('rect').attr('class','tuvalu-hit').attr('x',r=>Math.max(0,x(r.year)-c.w/14)).attr('y',0).attr('width',r=>Math.min(c.w,x(r.year)+c.w/14)-Math.max(0,x(r.year)-c.w/14)).attr('height',c.h).attr('fill','transparent').attr('tabindex',0).attr('role','img').attr('aria-label',r=>`${r.year}. Model ${amount(r.central)}. Reported ${amount(r.actual)}. Range ${amount(r.low)} to ${amount(r.high)}. ${r.extension?'January–August linked extension.':''}`)
+      .on('pointermove',show).on('pointerleave',()=>{guide.attr('visibility','hidden');hideTooltip();})
+      .on('focus',function(event,row){const box=this.getBoundingClientRect();show({clientX:box.x+box.width/2,clientY:box.y+35},row);}).on('blur',()=>{guide.attr('visibility','hidden');hideTooltip();});
+    const g=svgFrame($('tuvalu-changes-chart'),[Math.min(0,d3.min(tuv.growth,r=>r.value))*1.3,d3.max(tuv.growth,r=>r.value)*1.2],'Model change (%)',window.innerWidth<=760?230:260);
+    if (g) {
+      const gx=d3.scaleBand().domain(tuv.growth.map(r=>r.year)).range([0,g.w]).padding(.35);
+      g.g.append('g').attr('transform',`translate(0,${g.h})`).call(d3.axisBottom(gx).tickSize(0).tickValues(g.width<450?[2020,2022,2024,2026]:gx.domain()).tickFormat(d3.format('d'))).call(a=>a.selectAll('text').attr('dy','1.5em'));
+      g.g.append('line').attr('x2',g.w).attr('y1',g.y(0)).attr('y2',g.y(0)).attr('stroke','var(--muted)');
+      g.g.selectAll('.tuvalu-growth-bar').data(tuv.growth).join('rect').attr('class','tuvalu-growth-bar').attr('x',r=>gx(r.year)).attr('width',gx.bandwidth()).attr('y',r=>g.y(Math.max(0,r.value))).attr('height',r=>Math.abs(g.y(r.value)-g.y(0))).attr('fill','var(--teal)').attr('opacity',r=>r.extension ? .45 : .9).append('title').text(r=>`${r.year}: ${signed(r.value)} (${r.extension?'Jan–Aug':'full-year'} comparison)`);
+      g.g.selectAll('.tuvalu-growth-label').data(tuv.growth).join('text').attr('class','tuvalu-growth-label').attr('x',r=>gx(r.year)+gx.bandwidth()/2).attr('y',r=>g.y(r.value)+(r.value>=0?-8:16)).attr('text-anchor','middle').style('font-size',g.width<450?'9px':'11px').text(r=>signed(r.value));
+    }
+    const decomp=tuv.decomposition;
+    $('tuvalu-decomposition').textContent=`In Jan–Aug 2026, the allocated activity measure changed by ${signed(Number(decomp.allocated_quantity_growth_pct))} and AUD per USD by ${signed(Number(decomp.aud_per_usd_growth_pct))}, combining multiplicatively to ${signed(Number(decomp.combined_index_growth_pct))}. Lighter bars mark the Jan–Aug comparisons.`;
+    const official=tuv.observations.filter(r=>r.role==='main_comparator'),fy=tuv.observations.find(r=>r.role==='separateFY');
+    $('tuvalu-receipts-table').innerHTML=official.map(r=>`<tr><td>${esc(r.year_or_period)}</td><td>${num(Number(r.revenue_aud_million),3)}</td><td><a href="${esc(safeURL(r.source_url))}#page=${encodeURIComponent(r.pdf_page)}" target="_blank" rel="noopener noreferrer">${r.source_id.startsWith('imf')?'IMF historical reporting':'Government financial statements'} ↗</a><small>${esc(r.source_table)}. ${esc(r.quality_flags)}</small></td></tr>`).join('');
+    if(fy){$('tuvalu-fy-value').textContent='A$'+num(Number(fy.revenue_aud_million),2)+'m';$('tuvalu-fy-source').href=safeURL(fy.source_url)+'#page='+encodeURIComponent(fy.pdf_page);}
+  }
   function renderSources(){
     $('source-summary').textContent='This dashboard is built from validated historical source files. It does not query a live tracking feed. The fishing, regional and revenue panels use different source populations and definitions.';
     const definitions=[
@@ -423,10 +477,11 @@
   $('month-select').addEventListener('change',event=>{if(state.mode==='timeline'){state.month=event.target.value;state.calendarMonth=Number(state.month.slice(5,7))-1;}else state.calendarMonth=Number(event.target.value);updateDetails();});
   $('revenue-definition').addEventListener('change',event=>{state.revenue=event.target.value;drawRevenue();});
   $('forecast-scale').addEventListener('change',event=>{state.forecastScale=event.target.value;drawForecast();});
+  $('tuvalu-scale').addEventListener('change',()=>{hideTooltip();drawTuvalu();});
   $('export-model').addEventListener('click',exportModel);
   $('fleet-view').addEventListener('change',event=>{state.fleetView=event.target.value;drawHistory();announce('Vessel comparison updated.');});
   $('export-vessels').addEventListener('click',exportVessels);
   $('export-monthly').addEventListener('click',exportCSV);
   renderSources();renderOverview();setPage(location.hash.slice(1)||'overview',{historyMode:'replace'});
-  new ResizeObserver(entries=>{const width=entries[0].contentRect.width;if(Math.abs(width-lastWidth)>1){lastWidth=width;if(state.page==='history')drawHistory();if(state.page==='revenue')drawRevenue();}}).observe(document.querySelector('.app-shell'));
+  new ResizeObserver(entries=>{const width=entries[0].contentRect.width;if(Math.abs(width-lastWidth)>1){lastWidth=width;if(state.page==='history')drawHistory();if(state.page==='revenue')drawRevenue();if(state.page==='tuvalu')drawTuvalu();}}).observe(document.querySelector('.app-shell'));
 })();

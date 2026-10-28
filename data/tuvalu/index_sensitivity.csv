@@ -1,0 +1,9 @@
+valuation,allocation,year,central,low,high,valid_threshold_paths,requested_threshold_paths,envelope_complete,interpretation
+fixed_relative_usd_purse_seine_only,baseline,2019,100.0,100.0,100.0,18,18,True,Tracking-threshold specification range; not a statistical confidence interval
+fixed_relative_usd_purse_seine_only,baseline,2020,152.386676505845,151.64482716351665,164.6657954819212,18,18,True,Tracking-threshold specification range; not a statistical confidence interval
+fixed_relative_usd_purse_seine_only,baseline,2021,71.98509743705364,69.30739348760153,75.42417341328579,18,18,True,Tracking-threshold specification range; not a statistical confidence interval
+fixed_relative_usd_purse_seine_only,baseline,2022,88.88495920625367,82.90361781551198,89.49848416930219,18,18,True,Tracking-threshold specification range; not a statistical confidence interval
+fixed_relative_usd_purse_seine_only,baseline,2023,146.20123364144428,127.6742865804362,146.20123364144428,18,18,True,Tracking-threshold specification range; not a statistical confidence interval
+fixed_relative_usd_purse_seine_only,baseline,2024,316.44469038384756,261.0929201373649,316.9106623248917,18,18,True,Tracking-threshold specification range; not a statistical confidence interval
+fixed_relative_usd_purse_seine_only,baseline,2025,85.9486321166278,75.03302310520934,86.48445630005442,18,18,True,Tracking-threshold specification range; not a statistical confidence interval
+fixed_relative_usd_purse_seine_only,baseline,2026,64.81395991933952,52.96578721139684,64.81395991933952,18,18,True,Tracking-threshold specification range; not a statistical confidence interval

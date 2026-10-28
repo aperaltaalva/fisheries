@@ -26,6 +26,14 @@ Annual receipts are transcribed from public fiscal documents issued by Kiribati�
 
 These bodies and their source documents retain their respective rights. Public availability is not a blanket licence for redistribution. The dashboard publishes analytical aggregates and source references, not copies of the registers or unpublished research source files. Historical affiliations do not establish current ownership or official endorsement.
 
+## Tuvalu country application
+
+The Tuvalu tab adapts the same research workflow to a screened purse-seine population, using a reviewed snapshot dated 15 October 2026. Model estimates span 2019–2026, with January–August linked extensions in 2025–2026. No newer data collection is implied by the dashboard integration.
+
+Fiscal attributions: the [IMF 2023 Tuvalu Article IV report, Table 3](https://www.imf.org/-/media/files/publications/cr/2023/english/1tuvea2023001.pdf#page=29) for 2019–2020 historical figures; [Tuvalu Whole of Government 2022 financial statements, Note 8](https://finance.gov.tv/wp-content/uploads/2026/07/TWOG-2022-Audit-Opinion-and-Audited-FS.pdf#page=28) for 2021–2022 actuals; and [Tuvalu National Budget 2026–2027, section 3.4.3](https://finance.gov.tv/wp-content/uploads/2026/07/2026-2027-NATIONAL-BUDGET-FINAL-1.pdf#page=34) for the separately displayed July 2024–June 2025 Finance-reported actual. The source bodies retain their respective rights. The public files reproduce analytical aggregates and source references, not the source documents.
+
+The 2021–2022 statements have an overall qualified audit opinion on other matters. Later disputed or estimated calendar-year revenue figures are excluded from the observed overlay, with reasons retained in the downloadable source ledger. Tuvalu's model uses purse-seine activity against a broader fiscal anchor, so scope differences remain material. Country-specific contract terms and all fee prices have not been verified.
+
 ## Exchange rates
 
 The saved revenue model uses **Reserve Bank of Australia (RBA)** exchange-rate publications, whose preserved source files carry **WM/Reuters** attribution. See [RBA exchange-rate publications](https://www.rba.gov.au/statistics/frequency/exchange-rates.html) and the [RBA copyright and disclaimer notice](https://www.rba.gov.au/copyright/).

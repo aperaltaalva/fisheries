@@ -1,0 +1,9 @@
+year,screened_purse_seine_population,window,calendar_physical_dates,reused_global_dates,reused_18h_dates,country_observed_positive_fishing_dates,positive_fishing_dates_with_18h_presence,country_fishing_vessels,country_fishing_vessels_with_18h_presence,usable_same_episode_18h_dates,detected_country_zero_dates,observed_country_dates,valid_G_unknown_K_dates,period,date_coverage_pct
+2019,167,annual,60955,19859,17104,1207,619,108,60,17104,18564,1295,0,Jan–Dec,51.284175642087824
+2020,167,annual,61122,21587,18781,1501,984,100,68,18779,20088,1499,0,Jan–Dec,65.55629580279813
+2021,167,annual,60955,18892,16122,580,366,67,41,16121,18329,563,0,Jan–Dec,63.10344827586207
+2022,167,annual,60955,17166,14542,343,237,40,26,14542,16820,346,0,Jan–Dec,69.09620991253644
+2023,167,annual,60955,16636,14430,469,370,48,39,14430,15954,682,0,Jan–Dec,78.89125799573561
+2024,167,annual,61122,15151,12773,685,504,53,44,12772,14207,944,0,Jan–Dec,73.57664233576642
+2025,167,jan_aug,40581,7794,6550,108,83,22,19,6550,7589,205,0,Jan–Aug,76.85185185185185
+2026,167,jan_aug,40581,10320,8896,122,104,27,25,8896,10154,166,0,Jan–Aug,85.24590163934427
